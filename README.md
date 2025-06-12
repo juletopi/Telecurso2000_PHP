@@ -28,6 +28,7 @@
 <div align="left">
   <h6><a href="#telecurso-2000-php"> Voltar para o início ↺</a></h6>
 </div>
+
 <br>
 
 <!-- AUTHOR -->
@@ -65,3 +66,17 @@
     </td>
   </tr>
 </table>
+
+<div align="left">
+  <h6><a href="#telecurso-2000-php"> Voltar para o início ↺</a></h6>
+</div>
+
+<br>
+
+<!-- THANK YOU, GOODBYE -->
+
+----
+
+<div align="center">
+  Feito com ❤️ e ☕ por <a href="https://github.com/juletopi"> Juletopi</a>.
+</div>
