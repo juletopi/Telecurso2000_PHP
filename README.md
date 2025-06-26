@@ -218,7 +218,8 @@ Conjunto de exercícios focando na criação de funções em PHP para manipular 
 - [16. Gerar tabela de exponenciação de 1 a 10](#16-gerar-tabela-de-exponenciação-de-1-a-10)
 
 #### Exercícios
-1. Exibir elementos de um array separados por espaço
+
+#### 1. Exibir elementos de um array separados por espaço
 ```php
 function exibir_array($array) {
     foreach ($array as $elemento) {
@@ -254,7 +255,8 @@ function exibir_array4($array) {
 $array = array(1 => 1, 2 => 2, 3 => 3, 4 => 4, 5 => 5);
 print exibir_array4($array);
 ```
-2. Verificar se um elemento está presente em um array
+
+#### 2. Verificar se um elemento está presente em um array
 ```php
 function checagem_membro($array, $membro) {
     foreach ($array as $element) {
@@ -267,7 +269,8 @@ function checagem_membro($array, $membro) {
 
 var_dump(checagem_membro([1, 2, 3, 4, 5], 1));
 ```
-3. Verificar se dois números são sequenciais
+
+#### 3. Verificar se dois números são sequenciais
 ```php
 function checagem_seq($seq_1, $seq_2) {
     if ($seq_1 == $seq_2 + 1 || $seq_1 == $seq_2 - 1) {
@@ -285,7 +288,8 @@ function checagem_seq_umalinha($seq_1, $seq_2) {
 var_dump(checagem_seq_umalinha(6, 7));
 var_dump(checagem_seq_umalinha(8, 9));
 ```
-4. Verificar se três números são sequenciais
+
+#### 4. Verificar se três números são sequenciais
 ```php
 function checagem_seq_3($seq_1, $seq_2, $seq_3) {
     return ($seq_1 == $seq_2 + 1 && $seq_2 == $seq_3 + 1) || ($seq_1 == $seq_2 - 1 && $seq_2 == $seq_3 - 1);
@@ -304,7 +308,8 @@ function checagem_seq_3_reaproveitada($seq_1, $seq_2, $seq_3) {
 var_dump(checagem_seq_3_reaproveitada(5, 6, 7));
 var_dump(checagem_seq_3_reaproveitada(8, 9, 10));
 ```
-5. Verificar se um array forma uma sequência
+
+#### 5. Verificar se um array forma uma sequência
 ```php
 function checagem_seq_array($array) {
     $anterior = array_shift($array);
@@ -321,7 +326,8 @@ function checagem_seq_array($array) {
 var_dump(checagem_seq_array([1, 2, 3, 4, 5]));
 var_dump(checagem_seq_array([5, 6, 7, 8, 9]));
 ```
-6. Retornar o primeiro elemento de um array
+
+#### 6. Retornar o primeiro elemento de um array
 ```php
 function primeiro_elemento($array) {
     return array_shift($array);
@@ -330,7 +336,8 @@ function primeiro_elemento($array) {
 var_dump(primeiro_elemento(['a', 'b', 3, 5, 'd', 6, 7]));
 var_dump(primeiro_elemento([7, 2, 3, 5, 9, 6, 1]));
 ```
-7. Retornar o segundo elemento de um array
+
+#### 7. Retornar o segundo elemento de um array
 ```php
 function segundo_elemento($array) {
     $primeiro = array_shift($array);
@@ -343,7 +350,8 @@ function segundo_elemento($array) {
 var_dump(segundo_elemento(['a', 'j', 3, 5, 'd', 6, 7]));
 var_dump(segundo_elemento([7, 17, 3, 5, 9, 6, 1]));
 ```
-8. Retornar um elemento em uma posição específica
+
+#### 8. Retornar um elemento em uma posição específica
 ```php
 function posicao_elemento($array, $posicao) {
     $anterior = array_shift($array);
@@ -360,7 +368,8 @@ function posicao_elemento($array, $posicao) {
 var_dump(posicao_elemento(['a', 'j', 3, 5, 'd', 6, 7], 5));
 var_dump(posicao_elemento([7, 17, 3, 5, 9, 6, 1], 6));
 ```
-9. Inverter um array
+
+#### 9. Inverter um array
 ```php
 function inverter_array($array) {
     $invertido = [];
@@ -374,7 +383,8 @@ function inverter_array($array) {
 var_dump(inverter_array(['a', 'b', 'c', 'd', 'e', 'f', 'g']));
 var_dump(inverter_array([10, 20, 30, 40, 50, 60, 70]));
 ```
-10. Retornar um elemento de um array (de trás para frente)
+
+#### 10. Retornar um elemento de um array (de trás para frente)
 ```php
 function posicao_elemento_invertido($array, $posicao) {
     $invertido = inverter_array($array);
@@ -384,7 +394,8 @@ function posicao_elemento_invertido($array, $posicao) {
 var_dump(posicao_elemento_invertido(['a', 'j', 3, 5, 'd', 6, 7], 3));
 var_dump(posicao_elemento_invertido([7, 17, 14, 69, 56, 99, 21], 1));
 ```
-11. Calcular o quadrado de um número
+
+#### 11. Calcular o quadrado de um número
 ```php
 function calc_quadrado($num) {
     return $num * $num;
@@ -392,7 +403,8 @@ function calc_quadrado($num) {
 
 var_dump(calc_quadrado(5));
 ```
-12. Calcular o quadrado de todos os elementos de um array
+
+#### 12. Calcular o quadrado de todos os elementos de um array
 ```php
 function calc_quadrado_array($array) {
     foreach ($array as $num => $value) {
@@ -403,7 +415,8 @@ function calc_quadrado_array($array) {
 
 var_dump(calc_quadrado_array([1, 2, 3]));
 ```
-13. Calcular o cubo de um número
+
+#### 13. Calcular o cubo de um número
 ```php
 function calc_cubo($num) {
     return calc_quadrado(($num)) * $num;
@@ -411,7 +424,8 @@ function calc_cubo($num) {
 
 var_dump(calc_cubo(5));
 ```
-14. Calcular o quadrado ou cubo de um número
+
+#### 14. Calcular o quadrado ou cubo de um número
 ```php
 function calc_cubo_ou_quadrado($num, $i) {
     return $i == 2 ? calc_quadrado($num) : calc_cubo($num);
@@ -420,7 +434,8 @@ function calc_cubo_ou_quadrado($num, $i) {
 var_dump(calc_cubo_ou_quadrado(3, 3));
 var_dump(calc_cubo_ou_quadrado(5, 2));
 ```
-15. Calcular qualquer exponencial de um número
+
+#### 15. Calcular qualquer exponencial de um número
 ```php
 function exponenciar($num, $i) {
     $resultado = $num;
@@ -432,7 +447,8 @@ function exponenciar($num, $i) {
 
 var_dump(exponenciar(5, 3));
 ```
-16. Gerar tabela de exponenciação de 1 a 10
+
+#### 16. Gerar tabela de exponenciação de 1 a 10
 ```php
 function tabela_exponenciacao($num) {
     $tabela = [];
