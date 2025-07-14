@@ -32,7 +32,6 @@
 
 <br>
 
-
 <!-- LEARNED CONCEPTS -->
 
 ## 📚 Conceitos Aprendidos:
@@ -460,6 +459,99 @@ function tabela_exponenciacao($num) {
 
 var_dump(tabela_exponenciacao(5));
 var_dump(tabela_exponenciacao(10));
+```
+
+<div align="left">
+  <h6><a href="#telecurso-2000-php"> Voltar para o início ↺</a></h6>
+</div>
+
+----
+
+### ➡️ Filas
+
+> [!NOTE]\
+> Para mais detalhes, consulte o arquivo [queues.php](https://github.com/juletopi/Telecurso2000_PHP/blob/main/queues.php), o diretório [gestaoEventos](https://github.com/juletopi/Telecurso2000_PHP/tree/main/gestaoEventos) e o guia em PDF [master.pdf](https://github.com/juletopi/Telecurso2000_PHP/blob/main/master.pdf).
+
+#### Introdução
+Uma **fila** é uma estrutura de dados que segue o princípio **FIFO** (First In, First Out), ou seja, o primeiro elemento a entrar na fila é o primeiro a ser removido. Em PHP, a implementação de filas pode ser feita utilizando arrays, com funções específicas para gerenciar a adição, remoção e consulta de elementos.
+
+Este tópico apresenta uma implementação de fila em PHP com os arquivos `fila.php`, `evento.php` e `atendimento.php`.
+
+#### Explicação
+
+A implementação da fila está contida no arquivo `fila.php`, que define as seguintes funções:
+
+- **`fila()`**: Cria uma nova fila.
+- **`filaAdd(&$fila, $el)`**: Adiciona um elemento ao final da fila.
+- **`filaTake(&$fila)`**: Remove e retorna o elemento do início da fila. Retorna `null` se a fila estiver vazia.
+- **`filaPeek($fila)`**: Retorna o elemento do início da fila sem removê-lo. Retorna `null` se a fila estiver vazia.
+- **`filaSize($fila)`**: Retorna o número de elementos na fila.
+- **`filaFull($fila)`**: Verifica se a fila está cheia.
+- **`filaEmpty($fila)`**: Verifica se a fila está vazia.
+- **`filaClear(&$fila)`**: Remove todos os elementos da fila.
+
+#### Exemplo 1: Simulação de um Evento (`evento.php`)
+
+O arquivo `evento.php` demonstra o uso básico da fila para gerenciar a chegada e o atendimento de pessoas em um evento:
+
+1. Uma fila é criada com `fila()`.
+2. Pessoas são adicionadas à fila com `filaAdd()`.
+3. O tamanho da fila é consultado com `filaSize()`.
+4. A primeira pessoa na fila é consultada com `filaPeek()`.
+5. Pessoas são atendidas (removidas) com `filaTake()`.
+6. A fila é limpa com `filaClear()` ao final do evento.
+
+Exemplo de saída ao executar `evento.php`:
+
+```
+Pessoas estão chegando ao evento...
+Tamanho da fila: 4 pessoas
+Primeira pessoa na fila: Ana
+
+Atendendo pessoas...
+Pessoa atendida: Ana
+Pessoa atendida: Bruno
+
+Tamanho da fila agora: 2 pessoas
+Primeira pessoa na fila: Clara
+
+Evento encerrado, limpando a fila...
+A fila está vazia!
+```
+
+##### Exemplo 2: Sistema de Atendimento Interativo (`atendimento.php`)
+
+O arquivo `atendimento.php` implementa um sistema interativo de gerenciamento de filas, onde o usuário pode:
+
+1. Gerar uma senha (adicionar uma pessoa à fila).
+2. Atender a próxima pessoa (remover da fila).
+3. Consultar o tamanho da fila.
+4. Verificar a próxima pessoa na fila.
+5. Sair do sistema, limpando a fila.
+
+Exemplo de interação com `atendimento.php`:
+
+```
+=== Sistema de Atendimento ===
+1. Gerar senha (adicionar pessoa à fila)
+2. Atender (chamar próxima pessoa)
+3. Ver tamanho da fila
+4. Ver próxima pessoa na fila
+5. Sair
+Escolha uma opção: 1
+Digite o nome da pessoa: Maria
+Senha gerada! Maria foi adicionado(a) à fila.
+
+=== Sistema de Atendimento ===
+...
+Escolha uma opção: 2
+Pessoa atendida: Maria
+
+=== Sistema de Atendimento ===
+...
+Escolha uma opção: 5
+Encerrando o sistema e limpando a fila...
+Sistema finalizado. A fila está vazia!
 ```
 
 <div align="left">
