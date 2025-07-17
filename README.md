@@ -2,15 +2,32 @@
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/5f6ab906-1cb9-4c3a-959a-94a94b2cda8e" alt="Telecurso2000-pic" width="500px" title="TELECURSO 2000 PHP">
-    <h2 align="center">TELECURSO 2000 PHP</h2>
 </div>
-
 <div align="center">
 
-  • Repositório de aprendizados 'especiais' sobre PHP, promovido por Evandro Murilo.
+  Repositório de aprendizados 'especiais' sobre PHP. <br>Promovido por Evandro Murilo.
 
 <br>
 </div>
+
+<!-- SUMMARY -->
+
+<h2 align="center">Sumário 🧾</h2>
+
+<div align="center">
+  <p align="center">
+    <a href="#-expressões-e-ordem-de-precendência">Expressões e Ordem de Precendência</a> &#xa0; | &#xa0;
+    <a href="#-escopos-e-resolução-de-expressões">Escopos e Resolução de Expressões</a>
+  </p>
+    <a href="#-funções-como-expressão-e-funções-compostas">Funções como Expressão e Funções Compostas</a> &#xa0; | &#xa0;
+    <a href="#-operador-ternário">Operador Ternário</a>
+   </p>
+    <a href="#%EF%B8%8F-arrays">Arrays</a> &#xa0; | &#xa0;
+    <a href="#%EF%B8%8F-filas">Fila</a> &#xa0; | &#xa0;
+    <a href="#-autor">Autor</a>
+</div>
+
+<br>
 
 <!-- ABOUT -->
 
