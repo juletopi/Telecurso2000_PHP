@@ -2,7 +2,9 @@
 
 <div align="center">
     <img src="https://github.com/user-attachments/assets/5f6ab906-1cb9-4c3a-959a-94a94b2cda8e" alt="Telecurso2000-pic" width="500px" title="TELECURSO 2000 PHP">
+    <h2 align="center">TELECURSO 2000 PHP</h2>
 </div>
+
 <div align="center">
 
   Repositório de aprendizados 'especiais' sobre PHP. <br>Promovido por Evandro Murilo.
