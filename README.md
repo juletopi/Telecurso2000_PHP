@@ -35,7 +35,7 @@
 
 ## ❓ "Telecurso 2000 PHP?"  
 
-É um nome divertido que acabei pensando para o conjunto de aprendizados contínuos promovidos por [**Evandro Murilo**](https://github.com/evandromurilo), através de vários exercícios guiados para alguns colaboradores (incluido eu), com foco em praticar conceitos de PHP de forma incremental. O intuito foi aprender conceitos de lógica de programação e a forma interpretação e execução do PHP.
+É um nome divertido que acabei pensando para o conjunto de aprendizados contínuos promovidos por [**Evandro Murilo**](https://github.com/evandromurilo), através de vários exercícios guiados para alguns colaboradores (incluido eu), com foco em praticar conceitos de PHP de forma incremental. O intuito foi aprender conceitos de lógica de programação e a forma de interpretação e execução do PHP.
 
 ### 📋 Listagem de tópicos
 
