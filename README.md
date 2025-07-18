@@ -25,7 +25,7 @@
     <a href="#-operador-ternário">Operador Ternário</a>
    </p>
     <a href="#%EF%B8%8F-arrays">Arrays</a> &#xa0; | &#xa0;
-    <a href="#%EF%B8%8F-filas">Fila</a> &#xa0; | &#xa0;
+    <a href="#%EF%B8%8F-filas">Filas</a> &#xa0; | &#xa0;
     <a href="#-autor">Autor</a>
 </div>
 
@@ -44,7 +44,7 @@
 - **🧩 Funções como Expressão e Funções Compostas**: Como funções são criadas e combinadas para formar funções compostas.
 - **❓ Operador Ternário**: Usando o operador ternário para decisões condicionais em uma única linha.
 - **🗂️ Arrays**: Trabalhando com arrays de diferentes formas sem apelar pra resolução mais rápida.
-- **➡️ Fila**: Implementação de uma estrutura de dados FIFO (First In, First Out) para gerenciar elementos com funções para adicionar, remover e consultar itens.
+- **➡️ Filas**: Implementação de uma estrutura de dados FIFO (First In, First Out) para gerenciar elementos com funções para adicionar, remover e consultar itens.
 
 <div align="left">
   <h6><a href="#telecurso-2000-php"> Voltar para o início ↺</a></h6>
