@@ -44,7 +44,8 @@
 - **🧩 Funções como Expressão e Funções Compostas**: Como funções são criadas e combinadas para formar funções compostas.
 - **❓ Operador Ternário**: Usando o operador ternário para decisões condicionais em uma única linha.
 - **🗂️ Arrays**: Trabalhando com arrays de diferentes formas sem apelar pra resolução mais rápida.
-- **➡️ Filas**: Implementação de uma estrutura de dados FIFO (First In, First Out) para gerenciar elementos com funções para adicionar, remover e consultar itens.
+- **➡️ Filas**: Estrutura de dados do tipo FIFO (First In, First Out) onde o primeiro elemento adicionado é o primeiro a ser removido.
+- **⬆️ Pilhas**: Estrutura de dados do tipo LIFO (Last In, First Out), onde o último elemento adicionado é o primeiro a ser removido.
 
 <div align="left">
   <h6><a href="#telecurso-2000-php"> Voltar para o início ↺</a></h6>
@@ -493,7 +494,7 @@ var_dump(tabela_exponenciacao(10));
 > Para mais detalhes, consulte o arquivo [queues.php](https://github.com/juletopi/Telecurso2000_PHP/blob/main/queues.php), o diretório [gestaoEventos](https://github.com/juletopi/Telecurso2000_PHP/tree/main/gestaoEventos) e o guia em PDF [master.pdf](https://github.com/juletopi/Telecurso2000_PHP/blob/main/master.pdf).
 
 #### Introdução
-Uma **fila** é uma estrutura de dados que segue o princípio **FIFO** (First In, First Out), ou seja, o primeiro elemento a entrar na fila é o primeiro a ser removido. Em PHP, a implementação de filas pode ser feita utilizando arrays, com funções específicas para gerenciar a adição, remoção e consulta de elementos.
+Uma **fila** é uma estrutura de dados que segue o princípio **FIFO** (First In, First Out), ou seja, o primeiro elemento a entrar na fila é o primeiro a ser removido. Imagine uma fila no banco: a primeira pessoa a chegar é a primeira a ser atendida, e quem chega depois precisa esperar sua vez. Em PHP, a implementação de filas pode ser feita utilizando arrays, com funções específicas para gerenciar a adição, remoção e consulta de elementos.
 
 Este tópico apresenta uma implementação de fila em PHP com os arquivos `fila.php`, `evento.php` e `atendimento.php`.
 
@@ -573,6 +574,35 @@ Escolha uma opção: 5
 Encerrando o sistema e limpando a fila...
 Sistema finalizado. A fila está vazia!
 ```
+
+<div align="left">
+  <h6><a href="#telecurso-2000-php"> Voltar para o início ↺</a></h6>
+</div>
+
+----
+
+### ⬆️ Pilhas
+
+> \[!NOTE]
+> Para mais detalhes, consulte o arquivo [stacks.php](https://github.com/juletopi/Telecurso2000_PHP/blob/main/stacks.php) e o guia em PDF [master.pdf](https://github.com/juletopi/Telecurso2000_PHP/blob/main/master.pdf).
+
+#### Introdução
+
+Uma **pilha** é uma estrutura de dados que segue o princípio **LIFO** (*Last In, First Out*), ou seja, o **último elemento adicionado é o primeiro a ser removido**. Imagine uma pilha de livros: para pegar o de baixo, você precisa tirar o de cima primeiro. Em PHP, pilhas podem ser implementadas com arrays, utilizando funções específicas para empilhar e desempilhar elementos.
+
+Este tópico apresenta uma implementação de pilha em PHP no arquivo `stacks.php`.
+
+#### Explicação
+
+A implementação da pilha está definida no arquivo `stacks.php`, com as seguintes funções:
+
+* **`pilha()`**: Cria uma nova pilha.
+* **`pilhaPush(&$pilha, $el)`**: Adiciona um elemento ao topo da pilha.
+* **`pilhaPop(&$pilha)`**: Remove e retorna o elemento do topo da pilha. Retorna `null` se a pilha estiver vazia.
+* **`pilhaPeek($pilha)`**: Retorna o elemento do topo sem removê-lo. Retorna `null` se a pilha estiver vazia.
+* **`pilhaSize($pilha)`**: Retorna a quantidade de elementos na pilha.
+* **`pilhaEmpty($pilha)`**: Verifica se a pilha está vazia.
+* **`pilhaClear(&$pilha)`**: Remove todos os elementos da pilha.
 
 <div align="left">
   <h6><a href="#telecurso-2000-php"> Voltar para o início ↺</a></h6>
