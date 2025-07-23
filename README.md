@@ -26,6 +26,7 @@
    </p>
     <a href="#%EF%B8%8F-arrays">Arrays</a> &#xa0; | &#xa0;
     <a href="#%EF%B8%8F-filas">Filas</a> &#xa0; | &#xa0;
+    <a href="#%EF%B8%8F-pilhas">Pilhas</a> &#xa0; | &#xa0;
     <a href="#-autor">Autor</a>
 </div>
 
