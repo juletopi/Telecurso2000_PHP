@@ -605,6 +605,83 @@ A implementação da pilha está definida no arquivo `stacks.php`, com as seguin
 * **`pilhaEmpty($pilha)`**: Verifica se a pilha está vazia.
 * **`pilhaClear(&$pilha)`**: Remove todos os elementos da pilha.
 
+#### Exemplo: Manipulação Básica de Pilha
+
+Usando as funções do aquivo `stacks.php`, podemos manipular uma fila simples:
+
+1. Uma pilha é criada com `pilha()`, inicializando um array vazio.
+2. Três elementos ("Amanda", "Filipe", "Fernando") são adicionados ao topo com `pilha_push()`.
+3. O tamanho da pilha é verificado com `pilha_size()`, retornando 3.
+4. O elemento do topo ("Fernando") é consultado com `pilha_peek()` sem ser removido.
+5. Os elementos são removidos na ordem LIFO ("Fernando", "Filipe", "Amanda") com `pilha_pop()`.
+6. A pilha é verificada como vazia com `pilha_empty()`, retornando `true`.
+7. A pilha é limpa com `pilha_clear()`, garantindo que esteja vazia.
+
+```php
+<?php
+// 1. Inicializa uma pilha vazia
+function pilha() {
+    return [];
+}
+
+// 2. Adiciona um elemento ao topo da pilha
+function pilha_push(&$p, $e) {
+    $p[] = $e;
+    return $p;
+}
+
+// 3. Retorna o tamanho da pilha
+function pilha_size($p) {
+    return count($p);
+}
+
+// 4. Retorna o elemento do topo sem removê-lo
+function pilha_peek($p) {
+    if (pilha_empty($p)) {
+        return null;
+    }
+    return $p[count($p) - 1];
+}
+
+// 5. Remove e retorna o elemento do topo
+function pilha_pop(&$p) {
+    if (pilha_empty($p)) {
+        return null;
+    }
+    return array_pop($p);
+}
+
+// 6. Verifica se a pilha está vazia
+function pilha_empty($p) {
+    return count($p) == 0;
+}
+
+// 7. Limpa a pilha
+function pilha_clear(&$p) {
+    $p = [];
+}
+
+// Exemplo de uso
+$p = pilha(); // Cria uma nova pilha
+pilha_push($p, "Amanda"); // Adiciona "Amanda"
+pilha_push($p, "Filipe"); // Adiciona "Filipe"
+pilha_push($p, "Fernando"); // Adiciona "Fernando"
+
+echo "Pilha após adições: " . json_encode($p) . "\n"; // Saída: ["Amanda", "Filipe", "Fernando"]
+echo "Tamanho da pilha: " . pilha_size($p) . "\n"; // Saída: 3
+echo "Topo da pilha: " . pilha_peek($p) . "\n"; // Saída: Fernando
+
+echo "Elemento removido: " . pilha_pop($p) . "\n"; // Saída: Fernando
+echo "Elemento removido: " . pilha_pop($p) . "\n"; // Saída: Filipe
+echo "Elemento removido: " . pilha_pop($p) . "\n"; // Saída: Amanda
+
+echo "Pilha vazia? " . (pilha_empty($p) ? 'Sim' : 'Não') . "\n"; // Saída: Sim
+
+pilha_clear($p); // Limpa a pilha
+echo "Pilha após limpeza: " . json_encode($p) . "\n"; // Saída: []
+?>
+```
+
 <div align="left">
   <h6><a href="#telecurso-2000-php"> Voltar para o início ↺</a></h6>
 </div>
