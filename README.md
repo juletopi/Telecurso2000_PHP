@@ -686,6 +686,154 @@ echo "Pilha após limpeza: " . json_encode($p) . "\n"; // Saída: []
   <h6><a href="#telecurso-2000-php"> Voltar para o início ↺</a></h6>
 </div>
 
+----
+
+### 🖥️ Criando uma Mini-Linguagem de Programação
+
+> [!NOTE]\
+> Para mais detalhes, consulte o diretório [calcPolonesa](https://github.com/juletopi/Telecurso2000_PHP/tree/main/calcPolonesa) e o guia em PDF [master.pdf](https://github.com/juletopi/Telecurso2000_PHP/blob/main/master.pdf).
+
+#### Introdução
+
+Uma **mini-linguagem de programação** é um sistema simplificado que permite executar comandos e processar dados de forma estruturada, geralmente com um conjunto reduzido de funcionalidades. Neste contexto, vamos ir desenvolvendo uma mini-linguagem começando com estruturas de pilhas e com a implementação de uma **calculadora polonesa reversa (RPN)** que utiliza a estrutura de dados pilha para processar expressões.
+
+O objetivo é criar uma base que possa ser expandida para incluir outras estruturas de dados, como filas, além de recursos avançados, como condições, loops e manipulação de variáveis.
+
+#### Explicação
+
+A calculadora polonesa reversa utiliza uma pilha para processar expressões em notação RPN, onde os operandos são inseridos antes dos operadores. Por exemplo, a expressão `(3 + 5) * 2` seria escrita como `3 5 + 2 *` em RPN. A pilha, que segue o princípio **LIFO (Last In, First Out)**, é usada para armazenar operandos e realizar operações na ordem correta.
+
+O arquivo `calculadora.php` implementa a lógica da calculadora, que lê comandos do usuário, processa números e operadores, e gerencia a pilha para calcular resultados. Por enquanto, a calculadora suporta operações aritméticas básicas e alguns comandos especiais, formando a base de uma mini-linguagem de programação.
+
+#### Exemplo: Calculadora Polonesa Reversa
+
+A **calculadora polonesa reversa** processa comandos inseridos pelo usuário em um formato interativo. Ela suporta:
+
+- **Números**: Empilhados diretamente na pilha.
+- **Operadores aritméticos** (`+`, `-`, `x` para multiplicação, `/` para divisão): Retiram dois elementos da pilha, realizam a operação e empilham o resultado.
+- **Comando `dup`**: Duplica o elemento no topo da pilha.
+- **Comando `show`**: Exibe o elemento no topo da pilha sem removê-lo e aguarda interação do usuário.
+- **Comando `exit`**: Encerra a execução da calculadora.
+
+```php
+<?php
+require_once 'pilha.php';
+
+$buffer = [];
+$pilha = pilha();
+
+function get() {
+    global $buffer;
+    if (empty($buffer)) {
+        $buffer = explode(" ", readline());
+    }
+    return array_shift($buffer);
+}
+
+while (true) {
+    $el = get();
+    if (is_numeric($el)) {
+        pilhaPush($pilha, $el);
+    } else if ($el == "+") {
+        $b = pilhaPop($pilha);
+        $a = pilhaPop($pilha);
+        if ($a !== null && $b !== null) {
+            pilhaPush($pilha, $a + $b);
+        } else {
+            print "Erro: Operandos insuficientes para a operação +\n";
+            exit(1);
+        }
+    } else if ($el == "x") {
+        $b = pilhaPop($pilha);
+        $a = pilhaPop($pilha);
+        if ($a !== null && $b !== null) {
+            pilhaPush($pilha, $a * $b);
+        } else {
+            print "Erro: Operandos insuficientes para a operação x\n";
+            exit(1);
+        }
+    } else if ($el == "-") {
+        $b = pilhaPop($pilha);
+        $a = pilhaPop($pilha);
+        if ($a !== null && $b !== null) {
+            pilhaPush($pilha, $a - $b);
+        } else {
+            print "Erro: Operandos insuficientes para a operação -\n";
+            exit(1);
+        }
+    } else if ($el == "/") {
+        $b = pilhaPop($pilha);
+        $a = pilhaPop($pilha);
+        if ($a !== null && $b !== null) {
+            if ($b != 0) {
+                pilhaPush($pilha, $a / $b);
+            } else {
+                print "Erro: Divisão por zero\n";
+ SAG exit(1);
+            }
+        } else {
+            print "Erro: Operandos insuficientes para a operação /\n";
+            exit(1);
+        }
+    } else if ($el == "dup") {
+        $el = pilhaPop($pilha);
+        if ($el !== null) {
+            pilhaPush($pilha, $el);
+            pilhaPush($pilha, $el);
+        } else {
+            print "Erro: Pilha vazia - não é possível duplicar\n";
+        }
+    } else if ($el == "show") {
+        $resultado = pilhaPeek($pilha);
+        if ($resultado !== null) {
+            print "Resultado atual: " . $resultado . "\n";
+        } else {
+            print "Erro: Pilha vazia - nenhum resultado disponível\n";
+        }
+        print "Pressione Enter para continuar ou digite 'sair' ";
+        $input = trim(readline());
+        if ($input == "exit") {
+            break;
+        }
+    } else if ($el == "exit") {
+        break;
+    } else {
+        print "Erro: Operador desconhecido '$el'\n";
+        exit(1);
+    }
+}
+
+if (pilhaSize($pilha) == 1) {
+    print "Resultado: " . pilhaPeek($pilha) . "\n";
+} else if (pilhaEmpty($pilha)) {
+    print "Erro: Nenhum resultado na pilha\n";
+    exit(1);
+} else {
+    print "Erro: Expressão inválida. Restaram " . pilhaSize($pilha) . " elementos na pilha\n";
+    exit(1);
+}
+?>
+```
+
+#### Exemplo (Entrada)
+```
+3 5 + show
+```
+#### Exemplo (Saída)
+```
+Resultado atual: 8
+Pressione Enter para continuar ou digite 'sair'
+```
+Explicação da execução:
+1. `3` é empilhado: pilha = `[3]`.
+2. `5` é empilhado: pilha = `[3, 5]`.
+3. `+` retira `5` e `3`, calcula `3 + 5 = 8`, e empilha `8`: pilha = `[8]`.
+4. `show` exibe o topo da pilha (`8`).
+
+<div align="left">
+  <h6><a href="#telecurso-2000-php"> Voltar para o início ↺</a></h6>
+</div>
+
 <br>
 
 <!-- AUTHOR -->
